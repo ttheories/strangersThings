@@ -9,6 +9,18 @@ export default function useAuth() {
       console.log("Token before fetch");
       const result = await fetchMe(token);
       console.log(result);
+      setUser(result.data);
     }
-  });
+    if (token) {
+      getMe();
+    }
+  }, [token]);
+  console.log("user currently is:", user);
+
+  return {
+    token,
+    setToken,
+    user,
+    setUser,
+  };
 }
