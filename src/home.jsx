@@ -7,10 +7,17 @@ function App() {
 
   return (
     <form
-      onSubmit={(event) => {
-        event.preventDefault();
-        console.log(userName, password);
-      }}
+    onSubmit={async (event) => {
+      event.preventDefault();
+      console.log({ userName, password });
+      // hit the register api route
+      const result = await registerUser(userName, password);
+      console.log(result);
+      const token = result.data.token;
+      localStorage.setItem("token", token);
+      setToken(token);
+    }}
+
     ></form>
   );
 }
