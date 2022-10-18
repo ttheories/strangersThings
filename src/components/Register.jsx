@@ -11,7 +11,6 @@ export default function Register({ setToken }) {
         onSubmit={async (event) => {
           event.preventDefault();
           console.log({ username, password });
-          // hit the register api route
           const result = await registerUser(username, password);
           console.log(result);
           const token = result.data.token;

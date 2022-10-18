@@ -4,6 +4,7 @@ import "./App.css";
 import Navigation from "./components/Navigation";
 import Register from "./components/Register";
 import { fetchMe } from "./api/auth";
+import AllPosts from "./components/AllPosts";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Routes>
-        <Route path="/.components/Allposts" />
+        <Route path="/Posts" element={<AllPosts />} />
         <Route path="/Register" element={<Register setToken={setToken} />} />
       </Routes>
       <h4>{user?.username}</h4>

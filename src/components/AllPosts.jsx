@@ -1,14 +1,29 @@
 //  This component should render all posts
 import { useEffect, useState } from "react";
-import { fetchPost } from "../api/posts";
+import { fetchPosts } from "../api/posts";
 
-function post() {
-  const [post, setPost] = useState([]);
+function AllPosts() {
+  const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    async function getAllPost() {
-      const AllPosts = await fetchPost();
-      setPost(AllPosts);
+    async function getAllPosts() {
+      const result = await fetchPosts();
+      console.log("The result is: ", result);
+      setPosts(result.data.posts);
     }
-  });
-  post.map;
+    getAllPosts();
+  }, []);
+
+  return (
+    <div>
+      {posts.map((post) => {
+        return (
+          <div>
+            <h4>{post.title}</h4>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
+export default AllPosts;
