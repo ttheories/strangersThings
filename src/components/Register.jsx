@@ -8,7 +8,6 @@ export default function Register({ setToken }) {
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { method } = useParams();
 
   return (
     <div>
@@ -17,11 +16,9 @@ export default function Register({ setToken }) {
           event.preventDefault();
 
           setError("");
-          if (method === "register") {
-            result = await registerUser(username, password);
-          } else {
-            result = await loginUser(username, password);
-          }
+
+          const result = await registerUser(username, password);
+
           if (result.success) {
             const token = result.data.token;
             localStorage.setItem("token", token);
@@ -48,9 +45,7 @@ export default function Register({ setToken }) {
           type="text"
           placeholder="password"
         />
-        <button type="submit">
-          {method === "register" ? "Register" : Login}
-        </button>
+        <button type="submit">"Register"</button>
       </form>
     </div>
   );

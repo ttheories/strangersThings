@@ -8,7 +8,7 @@ import AllPosts from "./components/AllPosts";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ username: "Guest" });
 
   useEffect(() => {
     async function getMe() {
@@ -25,9 +25,9 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation />
+      <Navigation user={user} />
       <Routes>
-        <Route path="/Posts" element={<AllPosts />} />
+        <Route path="/" element={<AllPosts />} />
         <Route path="/Register" element={<Register setToken={setToken} />} />
       </Routes>
       <h4>{user?.username}</h4>
