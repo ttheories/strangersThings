@@ -20,6 +20,9 @@ function AllPosts() {
         return (
           <div>
             <h4>{post.title}</h4>
+            <h4>{post.description}</h4>
+            <h4>{post.price}</h4>
+            <h4>{post.willDeliver}</h4>
           </div>
         );
       })}
