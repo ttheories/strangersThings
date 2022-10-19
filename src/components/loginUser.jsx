@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { loginUser } from "../api/auth";
 
-export default function loginUser({ setToken }) {
+export default function LoginUser({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 

@@ -5,7 +5,8 @@ import Navigation from "./components/Navigation";
 import Register from "./components/Register";
 import { fetchMe } from "./api/auth";
 import AllPosts from "./components/AllPosts";
-import loginUser from "./components/loginUser";
+import LoginUser from "./components/loginUser";
+import CreatePost from "./components/CreatePost";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -32,7 +33,11 @@ function App() {
       <Routes>
         <Route path="/AllPosts" element={<AllPosts />} />
         <Route path="/Register" element={<Register setToken={setToken} />} />
-        <Route path="/loginUser" element={<loginUser setToken={setToken} />} />
+        <Route path="/loginUser" element={<LoginUser setToken={setToken} />} />
+        <Route
+          path="/createPost"
+          element={<CreatePost setToken={setToken} />}
+        />
       </Routes>
       <h4>{user?.username}</h4>
     </div>
