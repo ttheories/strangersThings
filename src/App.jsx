@@ -20,13 +20,15 @@ function App() {
     }
     if (token) {
       getMe();
+    } else {
+      setUser({ username: "Guest" });
     }
     console.log("in the useEffect");
   }, [token]);
 
   return (
     <div className="App">
-      <Navigation user={user} />
+      <Navigation user={user} setToken={setToken} />
       <Routes>
         <Route path="/AllPosts" element={<AllPosts />} />
         <Route path="/Register" element={<Register setToken={setToken} />} />

@@ -1,15 +1,23 @@
 import { Link } from "react-router-dom";
 
-function Navigation({ user }) {
+function Navigation({ user, setToken }) {
   return (
-    <div>
+    <div className="MenuBtns">
       <h2>Stranger's Things</h2>
       <span>Hello, {user.username}</span>
-      <Link to="/">HOME</Link>
-      <Link to="/Register">Register</Link>
-      <Link to="/">Login</Link>
-      <Link to="/ ">Profile</Link>
-      <Link to="/Posts">All Posts</Link>
+      <Link to="/"> HOME_ </Link>
+      <Link to="/Register"> Register_ </Link>
+      <Link to="/"> Login_ </Link>
+      <Link to="/ "> Profile_ </Link>
+      <Link to="/AllPosts"> All Posts_ </Link>
+      <button
+        onClick={() => {
+          localStorage.removeItem("token");
+          setToken("");
+        }}
+      >
+        Log Out
+      </button>
     </div>
   );
 }

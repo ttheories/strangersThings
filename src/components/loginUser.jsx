@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { loginUser } from "../api/auth";
 import { useParams, useNavigate } from "react-router-dom";
 
 export default function loginUser({ setToken }) {
