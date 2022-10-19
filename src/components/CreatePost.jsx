@@ -35,25 +35,25 @@ function CreatePost() {
         <input
           value={title}
           placeholder="Title"
-          //   type="text"
+          type="text"
           onChange={(e) => setTitle(e.target.type)}
         ></input>
         <input
           value={description}
           placeholder="Description"
-          //   type="text"
+          type="text"
           onChange={(e) => setDescription(e.target.type)}
         ></input>
         <input
           value={price}
           placeholder="Price "
-          //   type="text"
+          type="text"
           onChange={(e) => setPrice(e.target.type)}
         ></input>
         <input
           value={location}
           placeholder="Location"
-          //   type="text"
+          type="text"
           onChange={(e) => setLocation(e.target.type)}
         ></input>
         <label>Will Deliver?</label>
