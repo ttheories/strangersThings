@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { registerUser} from "../api/auth";
+import { loginUser } from "../api/auth";
 import { useParams, useNavigate } from "react-router-dom";
 
-export default function Register({ setToken }) {
+export default function loginUser({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,16 +15,16 @@ export default function Register({ setToken }) {
         onSubmit={async (event) => {
           event.preventDefault();
 
-          setError("");
+          //setError("");
 
-          const result = await registerUser(username, password);
+          const result = await loginUser(username, password);
 
           if (result.success) {
             const token = result.data.token;
             localStorage.setItem("token", token);
             setToken(token);
-            setPassword("");
-            setUsername("");
+            //setPassword("");
+            //setUsername("");
             navigate("/");
           } else {
             setError(result.error.message);
@@ -45,7 +45,7 @@ export default function Register({ setToken }) {
           type="text"
           placeholder="password"
         />
-        <button type="submit">"Register"</button>
+        <button type="submit">"Login"</button>
       </form>
     </div>
   );

@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Register from "./components/Register";
 import { fetchMe } from "./api/auth";
 import AllPosts from "./components/AllPosts";
+import loginUser from "./components/loginUser";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -27,8 +28,9 @@ function App() {
     <div className="App">
       <Navigation user={user} />
       <Routes>
-        <Route path="/" element={<AllPosts />} />
+        <Route path="/AllPosts" element={<AllPosts />} />
         <Route path="/Register" element={<Register setToken={setToken} />} />
+        <Route path="/loginUser" element={<loginUser setToken={setToken} />} />
       </Routes>
       <h4>{user?.username}</h4>
     </div>
