@@ -13,7 +13,7 @@ export default function SinglePost({ post }) {
       <h4>{post.willDeliver}</h4>
       <button
         onClick={async () => {
-          <deletePost />;
+          const result = await deletePost(token, id);
 
           // call deletePost and pass it token and id from 5-6
           // refresh the page to see if the post was deleted
