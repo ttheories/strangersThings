@@ -7,7 +7,7 @@ function Navigation({ user, setToken }) {
       <span>Hello, {user.username}</span>
       <Link to="/Register"> Register_ </Link>
       <Link to="/loginUser"> Login_ </Link>
-      <Link to="/AllPosts"> All Posts_ </Link>
+      <Link to="/"> All Posts_ </Link>
       <Link to="/CreatePost">Create Post</Link>
       {/* <Link to="/SearchDelete">Delete a Post</Link> */}
       <button

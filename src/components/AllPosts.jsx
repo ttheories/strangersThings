@@ -9,11 +9,10 @@ function AllPosts() {
   useEffect(() => {
     async function getAllPosts() {
       const result = await fetchPosts();
-      console.log("The result is: ", result);
       setPosts(result.data.posts);
     }
     getAllPosts();
-  }, []);
+  }, [posts]);
 
   return (
     <div>
