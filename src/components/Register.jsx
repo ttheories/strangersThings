@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { registerUser} from "../api/auth";
+import { registerUser } from "../api/auth";
 import { useParams, useNavigate } from "react-router-dom";
 
 export default function Register({ setToken }) {

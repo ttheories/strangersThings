@@ -14,8 +14,6 @@ function AllPosts() {
     getAllPosts();
   }, []);
 
-
-
   return (
     <div>
       {posts.map((post) => {
