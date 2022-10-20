@@ -1,6 +1,7 @@
 //  This component should render all posts
 import { useEffect, useState } from "react";
 import { fetchPosts } from "../api/posts";
+import SinglePost from "./SinglePost";
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
@@ -17,14 +18,7 @@ function AllPosts() {
   return (
     <div>
       {posts.map((post) => {
-        return (
-          <div>
-            <h4>{post.title}</h4>
-            <h4>{post.description}</h4>
-            <h4>{post.price}</h4>
-            <h4>{post.willDeliver}</h4>
-          </div>
-        );
+        return <SinglePost post={post} />;
       })}
     </div>
   );

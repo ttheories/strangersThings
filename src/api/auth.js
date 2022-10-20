@@ -61,9 +61,9 @@ export async function fetchMe(token) {
 //     'Authorization': 'Bearer TOKEN_STRING_HERE'
 //   },
 
-export const SearchPost = async (POST_ID) => {
+export const SearchPost = async (token, postId) => {
   const response = await fetch(
-    "https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts/POST_ID",
+    `https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts/${postId}`,
     {
       method: "PATCH",
       headers: {
@@ -83,18 +83,3 @@ export const SearchPost = async (POST_ID) => {
   const result = await response.json();
   return result;
 };
-
-export async function deletePost(token) {
-  const response = await fetch(
-    `https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts/`,
-    {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
-  const result = await response.json();
-  return result;
-}
