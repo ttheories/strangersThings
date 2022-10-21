@@ -52,15 +52,6 @@ export async function fetchMe(token) {
   return result;
 }
 
-// export async function
-
-// fetch('http://strangers-things.herokuapp.com/api/COHORT-NAME/posts/5e8d1bd48829fb0017d2233b', {
-//   method: "PATCH",
-//   headers: {
-//     'Content-Type': 'application/json',
-//     'Authorization': 'Bearer TOKEN_STRING_HERE'
-//   },
-
 export const SearchPost = async (token, postId) => {
   const response = await fetch(
     `https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts/${postId}`,
@@ -83,3 +74,23 @@ export const SearchPost = async (token, postId) => {
   const result = await response.json();
   return result;
 };
+
+export async function CreateMessage(token, postId, content) {
+  const response = await fetch(
+    `https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts/${postId}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({
+        message: {
+          content,
+        },
+      }),
+    }
+  );
+  const result = await response.json();
+  return result;
+}

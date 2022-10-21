@@ -5,6 +5,11 @@ import SinglePost from "./SinglePost";
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState([]);
+
+  function postMatches(post, text) {
+    return post.title.toLowerCase().includes(text);
+  }
 
   useEffect(() => {
     async function getAllPosts() {
@@ -12,14 +17,24 @@ function AllPosts() {
       setPosts(result.data.posts);
     }
     getAllPosts();
-  }, [posts]);
+  }, []);
+
+  const filteredPosts = posts.filter((post) => postMatches(post, searchTerm));
+  const postsToDisplay = searchTerm.length ? filteredPosts : posts;
 
   return (
     <div>
-      {posts.map((post) => {
+      {/* <input
+          value={}
+          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          placeholder="search items"
+        /> */}
+      {postsToDisplay.map((post) => {
         return <SinglePost post={post} />;
       })}
     </div>
   );
 }
+
 export default AllPosts;
