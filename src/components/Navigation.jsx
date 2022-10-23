@@ -2,23 +2,38 @@ import { Link } from "react-router-dom";
 
 function Navigation({ user, setToken }) {
   return (
-    <div className="MenuBtns">
-      <h2>Stranger's Things</h2>
-      <span>Hello, {user.username}</span>
-      <Link to="/Register"> Register_ </Link>
-      <Link to="/loginUser"> Login_ </Link>
-      <Link to="/"> All Posts_ </Link>
-      <Link to="/CreatePost">Create Post</Link>
-      {/* <Link to="/SearchDelete">Delete a Post</Link> */}
-      <button
-        onClick={() => {
-          localStorage.removeItem("token");
-          setToken("");
-        }}
-      >
-        Log Out
-      </button>
-    </div>
+    <nav className="NavBar">
+      <Link to="/" className="site-title">
+        Stranger's Things
+      </Link>
+      <ul>
+        <li>
+          <span>Hello, {user.username}</span>
+        </li>
+        <li>
+          <Link to="/Register"> Register </Link>
+        </li>
+        <li>
+          <Link to="/loginUser"> Login </Link>
+        </li>
+        <li>
+          <Link to="/"> All Posts </Link>
+        </li>
+        <li>
+          <Link to="/CreatePost">Create Post</Link>
+        </li>
+        <li></li>
+
+        <button
+          onClick={() => {
+            localStorage.removeItem("token");
+            setToken("");
+          }}
+        >
+          Log Out
+        </button>
+      </ul>
+    </nav>
   );
 }
 

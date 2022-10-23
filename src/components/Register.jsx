@@ -45,7 +45,7 @@ export default function Register({ setToken }) {
           type="text"
           placeholder="password"
         />
-        <button type="submit">"Register"</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );

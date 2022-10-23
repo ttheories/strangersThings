@@ -5,6 +5,7 @@ import SinglePost from "./SinglePost";
 
 function AllPosts() {
   const [posts, setPosts] = useState([]);
+
   const [searchTerm, setSearchTerm] = useState([]);
 
   function postMatches(post, text) {
@@ -26,7 +27,7 @@ function AllPosts() {
     <div>
       {/* <input
           value={}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => setSearchTerm(e.target.value)}
           type="text"
           placeholder="search items"
         /> */}
@@ -36,5 +37,4 @@ function AllPosts() {
     </div>
   );
 }
-
 export default AllPosts;

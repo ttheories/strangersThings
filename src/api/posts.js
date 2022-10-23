@@ -1,5 +1,6 @@
 //  Function to fetch all posts from the api
 import useAuth from "../hooks/useAuth";
+
 export const fetchPosts = async () => {
   const response = await fetch(
     "https://strangers-things.herokuapp.com/api/2209-FTB-PT-WEB-FT/posts"

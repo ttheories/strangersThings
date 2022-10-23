@@ -7,7 +7,8 @@ import { fetchMe } from "./api/auth";
 import AllPosts from "./components/AllPosts";
 import LoginUser from "./components/loginUser";
 import CreatePost from "./components/CreatePost";
-import CreateMessage from "./components/Message";
+import CreateMessage from "./components/CreateMessage";
+//import SearchPosts from "./components/SearchPosts";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -40,6 +41,7 @@ function App() {
         />
         <Route path="/posts/:postId" element={<AllPosts />} />
       </Routes>
+      {/*<SearchPosts placeholder="Search items" /> */}
       <h4>{user?.username}</h4>
     </div>
   );

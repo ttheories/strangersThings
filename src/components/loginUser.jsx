@@ -45,7 +45,7 @@ export default function LoginUser({ setToken }) {
           type="text"
           placeholder="password"
         />
-        <button type="submit">"Login"</button>
+        <button type="submit">Login</button>
       </form>
     </div>
   );

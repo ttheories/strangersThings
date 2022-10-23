@@ -1,7 +1,13 @@
+//This component is for deleting a single post
+
 import { Navigate } from "react-router";
 import { deletePost } from "../api/posts";
 import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+
+// call deletePost and pass it token and id from 5-6
+// refresh the page to see if the post was deleted
+// filter through all of your posts, remove the post with the id you just deleted
 
 export default function SinglePost({ post }) {
   const { token } = useAuth();
